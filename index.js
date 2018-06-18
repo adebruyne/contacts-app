@@ -32,9 +32,14 @@ app.get('/contacts/:id', (req, res) => {
         return user.id === id;
     });
     // res.send(contact);
-    res.render('contact-detail', {
+    if(contact){
+        res.render('contact-detail', {
         contact
-    });
+    }); 
+    } else{
+        res.redirect('/');
+    }
+   
 });
 
 
