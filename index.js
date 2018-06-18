@@ -31,7 +31,10 @@ app.get('/contacts/:id', (req, res) => {
     let contact = contacts.users.find((user) => {
         return user.id === id;
     });
-    res.send(contact);
+    // res.send(contact);
+    res.render('contact-detail', {
+        contact
+    });
 });
 
 
